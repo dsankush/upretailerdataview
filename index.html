@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <style>
+h1 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+</style>
+  <meta charset="UTF-8" />
+  <title>India Map</title>
+  <link href="css/map-style.css"  rel="stylesheet" type="text/css"/>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/map-config.js"></script>
+  <script src="js/map-interact.js"></script>
+  <script src="https://unpkg.com/@panzoom/panzoom@latest/dist/panzoom.min.js"></script>
+
+</head>
+<body>
+  <div id="main-heading">
+        DIGICIDES RETAILER DATA<br>STATE : UTTAR PRADESH
+  </div>
+ <script>
+  const enhancedInfoList = document.getElementById("enhancedInfoList");
+
+  // Add new information dynamically
+  function addEnhancedInfo(icon, text) {
+    const newItem = document.createElement("div");
+    newItem.classList.add("infoItem");
+    newItem.innerHTML = `<span class="infoIcon">${icon}</span><span>${text}</span>`;
+    enhancedInfoList.appendChild(newItem);
+  }
+
+  // Example: Add new updates
+  setTimeout(() => addEnhancedInfo("📍", "Maharashtra: 600 Retailers"), 3000);
+  setTimeout(() => addEnhancedInfo("🔔", "Alert: Retailer count updated!"), 6000);
+</script>
+
+
+
+<span id="tryjstip"></span>
+ <h1 style="color:lightskyblue; opacity:0.0;">--------------------------------------------------------------------------------------------------------------</h1>
+
+<div id="mapwrapper">
+  
+  <div id="mapbase"><!-- V4.1 -->
+    
+    <h1 style="color:lightskyblue; opacity:0.0;">
+    ----------------------------------------------------------------------------------------------------
+</h1>
+    
+
+
+
+
+    
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-100 100 900 900" xml:space="preserve" filter="url(#3d-effect)">
+      <g>
+        
+        <path id="tryjs4" title="Uttar Pradesh" vector-effect="non-scaling-stroke" fill="#EBECED" stroke="#FFFFFF" d="M245.112,173.779L246.972,173.612L248.974,175.497L254.743,177.896L252.313,181.417L251.648,182.01L250.951,181.739L250.197,183.091L250.581,183.665L249.478,184.68L249.867,185.198L249.154,186.052L249.555,186.614L248.744,187.703L250.383,189.96L250.201,191.778L251.173,192.182L251.11,192.667L252.063,192.996L253.237,192.142L255.278,192.053L255.928,194.441L255.275,194.389L255.156,195.059L256.109,195.12L256.221,196.224L257.498,196.047L257.682,194.989L258.679,194.761L260.17,192.819L261.593,191.931L262.583,192.087L265.206,189.68L267.318,190.301L269.279,191.113L270.318,194.171L272.355,195.807L277.067,198.049L280.66,198.568L279.281,200.236L278.199,200.868L277.681,200.484L277.154,201.885L276.333,201.349L275.194,202.197L277.443,203.752L278.822,203.661L280.038,205.196L280.071,206.555L281.22,206.582L281.689,206.132L283.119,207.411L283.379,205.989L286.094,207.111L286.255,208.679L286.998,209.152L286.812,209.895L288.008,209.731L290.488,211.718L291.873,211.736L292.076,211.264L292.53,212.138L293.168,212.263L293.423,214.26L295.934,214.066L296.697,213.301L297.075,214.521L298.712,213.924L300.088,214.457L301.291,213.611L302.919,213.319L303.812,214.078L303.151,215.578L304.002,215.399L304.226,214.55L304.999,214.563L305.563,215.24L304.646,215.493L306.234,215.665L305.911,216.092L306.785,217.479L307.973,217.926L309.17,217.357L309.872,216.162L309.485,215.724L310.706,214.943L310.706,214.943L311.946,214.969L314.505,216.889L315.409,216.823L315.556,217.568L317.14,218.331L318.249,219.98L320.651,220.195L322.39,222.21L322.72,221.643L322.02,219.244L323.725,218.653L324.846,219.924L326.311,219.855L326.902,221.287L328.933,221.85L329.484,222.928L331.485,223.838L331.756,223.309L332.61,223.626L332.762,224.406L334.455,225.279L335.456,224.828L335.911,225.829L337.086,226.573L340.507,227.208L341.085,229.081L343.383,231.478L343.398,232.223L342.896,232.269L343.573,232.758L343.313,233.145L344.708,232.915L344.808,232.008L346.605,232.395L347.654,233.544L347.508,234.476L351.316,236.595L353.357,236.984L358.137,240.366L359.213,240.301L360.313,238.493L362.916,238.635L364.368,240.166L366.59,240.737L372.876,245.033L379.652,243.907L379.752,245.391L380.906,247.438L380.36,249.622L385.448,249.68L386.09,250.544L388.179,251.042L392.207,250.905L395.255,254.114L396.678,253.807L397.997,251.99L397.347,251.398L397.795,250.814L397.454,250.239L403.356,250.502L409.677,253.598L409.677,253.598L408.903,254.335L409.575,254.637L411.197,254.269L411.432,254.821L410.708,255.991L412.186,256.629L412.821,257.533L411.792,260.342L413.917,260.277L413.134,260.979L414.442,261.604L414.595,263.767L414.026,264.27L414.622,264.555L414.735,265.604L415.729,265.983L416.005,265.365L417.058,265.711L416.816,266.545L417.792,267.099L418.845,266.145L419.678,266.369L419.97,267.773L419.247,269.123L419.492,269.582L419.842,269.849L421.166,269.223L421.888,271.026L423.89,271.367L424.208,272.519L420.491,273.245L415.513,272.109L415.532,273.239L414.624,274.706L412.7,275.008L412.396,275.618L410.819,275.37L410.821,277.144L412.904,277.553L413.662,277.19L415.258,278.863L417.855,279.137L418.125,280.625L417.541,282.485L416.329,282.066L415.449,283.13L413.677,282.621L413.85,285.119L414.658,286.307L415.755,286.389L417.748,288.247L417.721,289.135L418.651,288.898L421.121,290.298L422.561,289.976L424.048,290.707L424.441,291.725L427.194,292.109L427.15,293.244L427.923,293.161L429.588,294.295L429.074,295.17L429.859,296.015L427.9,295.804L427.813,297.172L427.266,296.942L427.383,296.062L427.088,297.164L426.142,297.334L425.106,296.376L423.88,296.768L423.308,295.482L422.036,295.59L421.703,297.488L420.788,297.352L420.841,297.761L418.679,297.548L418.455,296.666L417.25,295.945L415.843,296.222L415.196,296.87L415.375,298.388L411.207,300.454L409.484,302.67L408.415,302.874L409.15,303.632L408,303.771L408.131,304.31L407.151,304.914L406.382,304.32L405.637,304.958L405.391,304.699L404.885,305.162L405.245,305.348L404.231,305.434L403.504,306.44L401.982,306.999L401.337,306.75L399.267,308.466L397.933,308.537L397.383,309.642L396.374,309.853L396.001,310.311L396.576,311.807L395.551,314.6L396.224,314.779L396.489,318.436L397.439,319.417L397.346,320.695L399.079,322.025L399.778,321.907L399.801,322.744L400.663,323.388L400.24,324.158L401.387,324.825L400.257,327.416L400.257,327.416L397.509,328.091L397.206,329.283L397.694,330.51L398.472,330.638L399.034,331.659L397.062,332.971L397.741,334.24L395.692,338.543L395.692,338.543L394.79,339.287L394.451,340.584L392.882,341.471L392.19,343.256L389.499,344.377L385.635,344.438L382.21,342.16L382.21,342.16L381.936,341.059L380.49,340.635L381.125,339.157L379.613,339.083L378.279,337.669L378.631,337.051L379.925,337.56L380.099,335.358L380.698,335.02L381.069,333.549L380.977,331.442L379.58,331.125L380.348,328.128L379.802,327.774L379.721,326.654L380.596,327.038L382.027,326.747L381.912,325.516L380.963,325.514L381.034,324.316L379.267,324.352L379.287,323.531L378.293,322.884L374.93,324.151L374.647,323.461L372.828,323.472L372.396,322.731L371.593,323.318L371.79,325.566L369.715,324.889L368.778,325.151L368.843,323.679L367.979,323.25L367.709,323.78L367.105,323.688L367.464,320.914L367.326,321.474L366.87,321.144L366.919,321.543L366.31,321.535L366.683,322.147L365.614,321.861L366.045,320.745L366.57,320.766L365.774,320.16L366.217,319.64L365.262,320.484L364.028,320.484L361.222,318.956L360.027,319.481L358.388,317.862L358.795,316.858L358.441,314.801L358.118,315.241L356.635,314.547L355.585,314.788L354.099,313.779L352.779,313.91L352.173,312.969L350.752,313.466L350.477,312.967L351.474,312.354L351.076,311.847L350.671,312.434L350.433,311.489L351.135,310.88L350.163,310.655L349.76,309.937L348.274,310.165L348.669,311.298L347.904,311.072L347.315,311.469L348.223,312.262L347.599,313.094L345.433,312.236L346.413,312.167L346.201,311.561L345.181,311.833L343.58,310.545L343.136,310.778L342.964,310.714L341.99,310.669L341.377,312.293L341.793,313.264L340.227,315.165L340.512,316.764L340.155,316.759L339.174,316.139L338.417,317.875L336.952,316.302L335.204,316.247L335.393,316.819L333.785,316.996L333.303,315.773L332.271,316.185L332.271,316.185L332.341,316.632L331.943,316.39L331.943,316.39L330.639,316.764L329.784,316.505L329.465,315.791L330.986,315.101L330.424,314.028L331.574,313.197L331.425,311.821L332.469,310.863L331.766,309.94L330.675,310.016L330.451,312.169L329.715,311.225L327.103,311.468L327.776,311.841L327.772,312.493L329.099,312.849L329.097,313.44L327.823,313.176L326.422,313.637L326.57,312.915L325.97,313.108L324.831,312.361L325.345,311.83L324.357,310.995L324.676,313.166L323.517,312.663L323.019,313.285L322.133,312.412L321.26,312.381L321.884,312.711L321.733,313.869L321.105,313.886L320.334,312.908L318.375,313.543L318.804,314.799L318.195,314.372L317.091,314.971L315.792,314.262L317.997,311.266L319.89,310.501L319.246,308.703L318.696,308.844L316.762,307.502L316.937,304.928L315.503,303.847L315.224,304.469L313.883,304.173L313.726,305.024L312.037,306.207L310.992,305.752L309.356,306.083L308.729,308.031L307.313,307.946L306.552,308.952L306.263,308.337L304.818,308.775L305.47,311.124L304.833,311.566L305.048,312.479L302.165,311.292L298.302,311.617L298.432,311.008L298.089,311.203L297.457,310.412L295.479,312.891L294.712,312.535L294.917,311.539L293.942,312.243L293.526,311.418L293.107,312.087L292.709,310.602L293.38,309.595L294.246,309.497L293.836,309.17L294.677,308.009L295.494,307.986L294.63,307.632L293.53,308.277L292.278,307.359L291.9,308.116L291.32,307.367L291.716,306.347L290.378,306.16L289.474,306.943L289.456,307.958L290.196,307.465L290.779,308.207L291.564,307.924L291.277,309.044L291.744,309.453L291.368,309.804L289.826,308.567L289.962,309.893L290.896,311.084L290.6,311.568L289.473,311.862L289.449,311.046L288.839,310.846L288.266,311.175L289.04,311.373L288.906,312.012L288.069,312.079L287.506,311.102L287.034,311.333L287.361,311.976L286.051,312.157L285.492,311.297L285.822,310.762L284.877,310.021L283.8,311.442L283.243,311.311L283.317,310.176L284.149,309.153L282.991,308.564L282.804,307.813L281.92,308.651L282.535,308.943L282.564,309.932L281.323,309.298L279.324,310.713L279.429,308.368L279.843,308.637L280.285,307.881L281.122,308.187L281.891,307.598L281.442,305.907L280.781,306.383L279.446,306.05L278.537,309.063L277.593,307.971L277.751,307.215L277.008,307.274L277.235,306.824L278.583,306.366L278.433,305.848L279.4,304.919L281.35,304.593L280.874,305.195L279.863,305.243L280.808,305.857L282.112,305.225L281.632,303.581L280.822,303.856L280.145,303.37L280.992,302.506L280.488,301.44L281.155,301.169L280.864,300.422L280.5,300.904L280.331,300.432L279.39,300.493L279.433,301.348L278.187,301.722L278.94,302.842L278.342,303.748L277.809,303.386L278.642,303.175L278.227,302.88L276.31,302.607L275.662,301.965L275.476,302.942L276.271,303.713L277.784,303.802L275.959,304.265L276.515,305.685L275.188,305.826L275.068,305.152L273.731,304.911L273.695,304.071L274.024,304.495L274.869,303.843L274.46,303.348L273.596,303.447L272.965,304.428L272.31,304.151L271.913,304.803L271.202,304.708L271.596,305.854L270.261,305.563L270.688,306.516L270.259,307.04L269.611,307.103L269.399,306.589L268.743,307.394L268.051,307.102L267.705,307.508L268.402,307.98L269.518,307.372L271.397,308.293L272.144,312.495L273.314,313.447L272.794,315.97L273.622,316.512L274.006,317.605L276.518,318.677L276.938,319.89L276.519,320.413L276.724,322.787L275.879,323.941L276.125,325.379L276.842,325.69L279.583,324.472L281.795,328.203L280.863,328.527L280.421,328.1L280.285,328.991L282.266,329.657L281.808,331.949L280.263,333.319L279.507,335.363L277.799,335.697L277.229,336.482L276.408,334.436L276.032,334.938L275.674,334.56L274.802,335.064L274.025,334.789L271.654,331.86L269.744,330.896L267.899,333.412L266.458,333.99L265.055,332.576L265.969,331.109L263.51,329.5L263.582,328.746L262.277,327.527L263.301,326.603L263.552,323.755L262.294,321.658L261.996,319.94L260.815,318.788L260.856,318.144L265.095,315.064L265.102,312.732L266.868,311.641L268.112,311.688L267.468,311.041L268.204,310.635L266.607,309.951L266.932,309.361L265.801,308.621L265.556,307.264L264.586,306.924L265.193,306.251L264.258,305.256L265.167,304.571L265.62,303.163L266.399,303.332L267.531,302.568L267.216,301.123L267.757,300.313L268.432,300.625L269.245,299.833L271.726,300.303L272.443,299.654L273.489,300.267L274.231,299.523L277.582,298.728L277.742,297.422L276.056,295.472L277.981,294.157L278.028,293.743L277.416,293.665L277.74,293.354L279.065,294.162L278.665,292.559L279.607,292.304L279.443,291.117L280.832,290.236L281.218,287.947L282.756,286.775L281.175,285.275L282.692,284.862L282.083,283.803L283.064,283.751L283.207,282.79L284.166,282.825L283.642,281.934L284.432,281.395L284.858,281.792L285.127,280.759L285.983,280.652L285.697,280.153L286.17,279.895L284.682,279.432L284.944,277.991L285.739,278.009L285.987,277.286L283.94,276.992L284.267,275.756L283.211,274.492L282.621,274.511L282.447,273.691L282.142,273.907L282.822,272.955L282.496,271.018L281.051,271.59L281.318,270.699L280.164,270.265L279.144,270.493L277.744,268.903L276.567,268.927L275.906,268.196L275.432,268.54L275.233,267.995L273.761,268.805L271.326,269.107L268.317,268.051L267.666,267.156L266.722,267.35L265.718,266.057L263.907,266.326L263.353,267.453L262.018,267.057L262.018,267.057L261.53,265.685L262.457,265.84L263.389,264.772L262.177,263.976L261.899,264.37L259.444,263.995L259.186,265.256L257.638,264.984L257.783,266.045L257.11,266.41L256.708,265.108L255.017,265.393L253.918,264.745L253.661,265.662L250.087,264.4L249.186,264.958L249.106,265.875L246.195,267.143L244.005,267.425L243.411,266.747L242.966,268.319L243.29,268.863L242.112,269.393L242.531,268.797L241.597,268.782L241.875,267.5L241.437,266.249L247.357,263.457L249.642,263.081L250.13,262.178L249.384,261.948L249.275,262.764L248.785,262.765L247.995,261.425L246.794,262.368L244.964,261.808L245.181,260.733L244.022,261.016L243.422,260.285L245.836,259.556L246.211,258.369L247.505,258.183L247.986,257.535L247.11,257.093L247.233,256.528L245.86,254.916L246.447,253.797L245.412,254.232L243.392,252.804L241.683,252.338L241.246,251.653L241.623,250.695L240.756,250.283L240.39,249.27L239.154,248.917L239.03,247.844L239.545,247.261L238.529,246.783L239.342,245.703L239.191,244.574L238.173,243.986L238.344,242.173L237.603,241.689L237.603,241.689L239.264,240.303L241.174,240.316L241.171,239.347L242.378,239.63L242.646,238.386L243.966,238.414L244.44,237.736L243.741,237.464L244.384,236.807L242.918,235.479L242.65,234.384L242.895,233.811L243.263,234.071L243.369,232.453L244.571,231.884L243.258,231.793L243.179,231.091L243.963,231.358L243.871,230.626L244.541,230.157L242.609,229.582L243.274,229.297L243.354,228.606L242.516,227.797L243.313,227.267L242.798,225.823L239.222,223.328L239.222,223.328L238.073,221.818L239.182,220.716L238.529,219.782L238.849,217.919L237.841,218.009L236.267,216.043L235.541,215.843L236.074,214.798L235.278,213.974L235.278,213.974L235.145,213.373L236.176,212.998L235.364,211.651L235.992,210.336L233.583,207.727L234.053,205.732L233.667,204.615L234.159,204.131L233.778,203.361L234.417,201.723L233.531,201.349L233.45,200.646L234.231,200.304L233.684,199.758L234.037,198.936L232.613,196.544L233.262,196.037L232.631,194.787L234.14,192.038L233.453,190.34L234.377,189.756L235.104,186.804L237.272,184.296L237.462,183.088L241.227,181.552L240.797,181.249L241.465,179.948L242.765,179.422L244.164,176.973L245.303,176.216L245.869,174.658L245.421,174.301L245.421,174.301L245.112,173.779L245.112,173.779L245.112,173.779z"/>
+        
+    
+  </g>
+    </svg>
+  </div>
+</div>
+
+
+<!-- DEFS -->
+<script>
+    const stateLabels = [
+        { id: "tryjs1", name: "Jammu and Kashmir" },
+        { id: "tryjs2", name: "West Bengal" },
+        { id: "tryjs3", name: "Uttarakhand" },
+        { id: "tryjs4", name: "Uttar Pradesh" },
+        { id: "tryjs5", name: "Tripura" },
+        { id: "tryjs6", name: "Tamil Nadu" },
+        { id: "tryjs7", name: "Telangana" },
+        { id: "tryjs8", name: "Sikkim" },
+        { id: "tryjs9", name: "Rajasthan" },
+        { id: "tryjs10", name: "Puducherry" },
+        { id: "tryjs11", name: "Punjab" },
+        { id: "tryjs12", name: "Odisha" },
+        { id: "tryjs13", name: "Nagaland" },
+        { id: "tryjs14", name: "Mizoram" },
+        { id: "tryjs15", name: "Madhya Pradesh" },
+        { id: "tryjs16", name: "Manipur" },
+        { id: "tryjs17", name: "Meghalaya" },
+        { id: "tryjs18", name: "Maharashtra" },
+        { id: "tryjs19", name: "Lakshadweep" },
+        { id: "tryjs20", name: "Kerala" },
+        { id: "tryjs21", name: "Karnataka" },
+        { id: "tryjs22", name: "Ladakh" },
+        { id: "tryjs23", name: "Jharkhand" },
+        { id: "tryjs24", name: "Haryana" },
+        { id: "tryjs25", name: "Himachal Pradesh" },
+        { id: "tryjs26", name: "Gujarat" },
+        { id: "tryjs27", name: "Goa" },
+        { id: "tryjs28", name: "Dadra and Nagar Haveli" },
+        { id: "tryjs29", name: "Delhi" },
+        { id: "tryjs30", name: "Daman and Diu" },
+        { id: "tryjs31", name: "Chhattisgarh" },
+        { id: "tryjs32", name: "Chandigarh" },
+        { id: "tryjs33", name: "Bihar" },
+        { id: "tryjs34", name: "Assam" },
+        { id: "tryjs35", name: "Arunachal Pradesh" },
+        { id: "tryjs36", name: "Andhra Pradesh" },
+        { id: "tryjs37", name: "Andaman and Nicobar Islands" }
+    ];
+
+    // Dynamically Add Labels to the Map
+    stateLabels.forEach(label => {
+        const statePath = document.getElementById(label.id);
+
+        if (statePath) {
+            const bbox = statePath.getBBox(); // Calculate position
+            const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+
+            text.setAttribute("x", bbox.x + bbox.width / 2); // Center horizontally
+            text.setAttribute("y", bbox.y + bbox.height / 2); // Center vertically
+            text.setAttribute("font-family", "Roboto");
+            text.setAttribute("font-size", "15");
+            text.setAttribute("fill", "black");
+            text.setAttribute("text-anchor", "middle"); // Align text to center
+            text.textContent = label.name;
+
+            // Append the text element to the SVG
+            document.querySelector("svg").appendChild(text);
+        }
+    });
+</script>
+
+
+
+
+
+<!-- Legend -->
+
+
+<!-- Zoom and Pan Initialization -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+/>
+<div id="controls" style="position: absolute; top: 20px; left: 20px; z-index: 10;">
+  
+  <button id="resetZoom"><i class="fas fa-sync-alt"></i> Reset Zoom</button>
+
+
+</div>
+<script>
+  document.querySelectorAll("#mapbase path").forEach((path) => {
+  path.addEventListener("mouseenter", () => {
+    path.parentNode.appendChild(path); // Moves the hovered path to the end of the SVG group
+  });
+});
+
+
+  document.querySelectorAll("#mapbase path").forEach((path) => {
+    path.addEventListener("mouseenter", () => {
+      path.parentNode.appendChild(path); // Brings the hovered path to the front
+    });
+  });
+</script>
+
+<script >
+  document.addEventListener("DOMContentLoaded", () => {
+  const tooltip = document.querySelector("#tryjstip");
+  let isFrozen = false; // Tracks if the tooltip is frozen
+
+  document.querySelectorAll("#mapbase path").forEach((path) => {
+    path.addEventListener("mouseenter", (event) => {
+      if (!isFrozen) {
+        const stateData = tryjsconfig[path.id]?.hover || "No data available";
+        tooltip.innerHTML = stateData;
+        tooltip.style.display = "block";
+        tooltip.style.left = `${event.pageX + 10}px`;
+        tooltip.style.top = `${event.pageY + 10}px`;
+      }
+    });
+
+    path.addEventListener("mouseleave", () => {
+      if (!isFrozen) {
+        tooltip.style.display = "none";
+      }
+    });
+
+    path.addEventListener("click", () => {
+      isFrozen = !isFrozen; // Toggle the frozen state
+      if (!isFrozen) {
+        tooltip.style.display = "none"; // Hide tooltip when unfrozen
+      }
+    });
+  });
+
+  // Ensure tooltip moves with the mouse while not frozen
+  document.addEventListener("mousemove", (event) => {
+    if (!isFrozen && tooltip.style.display === "block") {
+      tooltip.style.left = `${event.pageX + 10}px`;
+      tooltip.style.top = `${event.pageY + 10}px`;
+    }
+  });
+});
+
+
+
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  fetch("mapData.json")
+    .then((response) => response.json())
+    .then((data) => {
+      Object.keys(data).forEach((stateKey) => {
+        const stateData = data[stateKey];
+        const tableRows = stateData.districts
+          .map(
+            (district) => `
+              <tr>
+                <td style="border: 1px solid #ddd; padding: 8px; background-color: ${stateData.backgroundColor}; color: black;">${stateData.state}</td>
+                <td style="border: 1px solid #ddd; padding: 8px; background-color: ${stateData.backgroundColor}; color: black;">${district.name}</td>
+                <td style="border: 1px solid #ddd; padding: 8px; background-color: ${stateData.backgroundColor}; color: black;">${district.retailerCount}</td>
+                <td style="border: 1px solid #ddd; padding: 8px; background-color: ${stateData.backgroundColor}; color: black;">${district.retailersWithQRCode}</td>
+              </tr>`
+          )
+          .join("");
+
+        const totalRow = `
+          <tr style="font-weight: bold; background-color: #ececec;">
+            <td colspan="2" style="border: 1px solid #ddd; padding: 8px;">Total</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">${stateData.total.retailerCount}</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">${stateData.total.retailersWithQRCode}</td>
+          </tr>`;
+
+        const table = `
+          <table style="border-collapse: collapse; width: 100%; text-align: left; background-color: ${stateData.backgroundColor};">
+            <thead>
+              <tr style="background-color: ${stateData.backgroundColor};">
+                <th style="border: 1px solid #ddd; padding: 8px; background-color: ${stateData.backgroundColor}; color: black;">State</th>
+                <th style="border: 1px solid #ddd; padding: 8px; background-color: ${stateData.backgroundColor}; color: black;">District</th>
+                <th style="border: 1px solid #ddd; padding: 8px; background-color: ${stateData.backgroundColor}; color: black;">Retailer Count</th>
+                <th style="border: 1px solid #ddd; padding: 8px; background-color: ${stateData.backgroundColor}; color: black;">Retailers with QR Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${tableRows}
+              ${totalRow}
+            </tbody>
+          </table>`;
+
+        // Assign the table to the hover property dynamically
+        tryjsconfig[stateKey].hover = table;
+      });
+    })
+    .catch((error) => console.error("Error loading map data:", error));
+});
+
+</script>
+
+<script>
+
+  window.addEventListener("load", () => {
+  document.getElementById("loadingSpinner").style.display = "none";
+});
+  document.addEventListener("DOMContentLoaded", function () {
+    const mapElement = document.querySelector("#mapbase svg"); // Select the SVG map
+    const panzoomInstance = Panzoom(mapElement, {
+      maxScale: 200, // Maximum zoom level
+      minScale: 1, // Minimum zoom level
+      contain: "outside", // Allow panning outside the container
+    });
+
+    // Enable mouse wheel zoom
+    mapElement.parentElement.addEventListener("wheel", panzoomInstance.zoomWithWheel);
+
+    // Reset Zoom Button
+    const resetButton = document.getElementById("resetZoom");
+    resetButton.addEventListener("click", () => {
+      panzoomInstance.reset();
+    });
+
+    // Zoom-In and Zoom-Out Buttons
+    document.getElementById("zoom-in").addEventListener("click", function () {
+      panzoomInstance.zoomIn();
+    });
+
+    document.getElementById("zoom-out").addEventListener("click", function () {
+      panzoomInstance.zoomOut();
+    });
+  });
+  document.addEventListener("mousemove", function (e) {
+  const lightX = e.clientX / window.innerWidth * 200;
+  const lightY = e.clientY / window.innerHeight * 200;
+  document.querySelector("fePointLight").setAttribute("x", lightX);
+  document.querySelector("fePointLight").setAttribute("y", lightY);
+});
+</script>
+
+
+</body>
+</html>
